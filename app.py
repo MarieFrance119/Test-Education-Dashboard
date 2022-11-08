@@ -24,6 +24,7 @@ from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Created functions
 
 def pre_process(data) :
     """
@@ -176,7 +177,7 @@ def perc_cluster_repartition(df_with_col_label):
         palette="tab20",
     )
     plt.title(
-        "Students distribution per groups ", 
+        "Students distribution per group ", 
         size=14)
 
     # ajout des étiquettes pour afficher valeurs de pourcentages
@@ -248,6 +249,8 @@ def plot_var_cluster(df_with_col_label, col_labels, col):
     plt.show()
 
 
+# Streamlit dashboard
+
 #magic uses st.write
 # Title
 st.write('# Education dashboard V1')
@@ -274,14 +277,13 @@ submit=False
 if file is not None :
     with st.spinner("Data loading..."):  
         path = file
-        #file_placeholder.image(img)
 
     # Submit button creation
     submit = submit_placeholder.button("Launch data analyse")
 
 # When clicking on submit button
 if submit :
-    with st.spinner('Searching...'):    
+    with st.spinner('Work in progress...'):    
         submit_placeholder.empty()
         data = pd.read_csv(path)
 
